@@ -17,7 +17,7 @@ public class DisplayManager {
         try {
             Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
             Display.create(new PixelFormat(), attribs);
-            Display.setTitle("Game Engine from scratch - testing git");
+            Display.setTitle("Game Engine from scratch");
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
