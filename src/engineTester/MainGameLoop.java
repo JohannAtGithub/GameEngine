@@ -5,6 +5,7 @@ import renderEngine.DisplayManager;
 import renderEngine.Loader;
 import renderEngine.RawModel;
 import renderEngine.Renderer;
+import shaders.StaticShader;
 
 public class MainGameLoop {
 
@@ -13,6 +14,7 @@ public class MainGameLoop {
 
         Loader loader = new Loader();
         Renderer renderer = new Renderer();
+        StaticShader shader = new StaticShader();
 
         // OpenGL expects vertices to be defined counter clockwise for each triangle by default
         float[] vertices = {
@@ -33,14 +35,19 @@ public class MainGameLoop {
             // Prepare the renderer every frame
             renderer.prepare();
 
+            shader.start();
+
             // Render the model
             renderer.render(model);
+
+            shader.stop();
 
             DisplayManager.updateDisplay();
         }
 
-        //Clean up the loader after everything's done
+        //Clean up after everything's done
         loader.cleanUp();
+        shader.cleanUp();
 
         DisplayManager.closeDisplay();
     }

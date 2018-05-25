@@ -13,7 +13,7 @@ import java.util.List;
 
 /*
  * Loading 3D models into memory by storing
- * poitioning data about the model in an VAO
+ * positioning data about the model in an VAO
  */
 public class Loader {
 
@@ -21,7 +21,7 @@ public class Loader {
      * When we close the game, we want to
      * delete all the vaos that we created
      * in memeory. So keep track of all created
-     * VAOs and VBOs that we created
+     * VAOs and VBOs that we've created
      */
     private List<Integer> vaos = new ArrayList<Integer>();
     private List<Integer> vbos = new ArrayList<Integer>();
